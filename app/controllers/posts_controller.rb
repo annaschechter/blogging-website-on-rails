@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
+
+before_filter :authenticate_user!, except: [:index, :show]
+
   def index
     @posts = Post.all
   end
 
   def new
-    authenticate_user!
     if current_user.has_role? :admin
       @post = Post.new
     else
@@ -17,7 +19,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    authenticate_user!
     if current_user.has_role? :admin
       Post.create(post_params)
       redirect_to '/posts'
@@ -31,7 +32,6 @@ class PostsController < ApplicationController
   end 
 
   def edit
-    authenticate_user!
     if current_user.has_role? :admin
       @post = Post.find(params[:id])
     else
@@ -40,7 +40,6 @@ class PostsController < ApplicationController
   end
 
   def update
-    authenticate_user!
     if current_user.has_role? :admin
       @post = Post.find(params[:id])
       @post.update(post_params)
@@ -51,7 +50,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    authenticate_user!
     if current_user.has_role? :admin
       @post = Post.find(params[:id])
       @post.destroy

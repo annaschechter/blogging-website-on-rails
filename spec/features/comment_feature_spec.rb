@@ -13,6 +13,7 @@ feature 'comments' do
     Post.create(text: "Welcome to my blog")
     # admin = User.create(email: "anna@test.com", password: "passwordanna")
     # admin.add_role :admin
+    user = User.create(email: "bob@test.com", password: "passwordbob")
     sign_in("bob@test.com", "passwordbob")
   end
 

@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+before_filter :authenticate_user!
 
   def new
     @post = Post.find(params[:post_id])
@@ -6,7 +7,8 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:text)
+    puts params
+    params.require(:comment).permit(:text, :user_id)
   end
 
   def create
