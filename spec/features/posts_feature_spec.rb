@@ -8,5 +8,13 @@ feature 'posts' do
     visit '/posts'
     expect(page).to have_content('Welcome to my blog')
   end
+
+  scenario 'user can add posts, which are the displayed on "all posts" page' do
+    visit '/posts'
+    click_link 'NEW POST'
+    fill_in 'Text', with: 'This is my second post'
+    click_button 'Post'
+    expect(page).to have_content('This is my second post')
+  end
   
 end
