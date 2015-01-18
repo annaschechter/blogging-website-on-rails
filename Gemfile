@@ -41,3 +41,7 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
 end
+
+gem 'devise'
+gem 'cancan'
+gem 'rolify'

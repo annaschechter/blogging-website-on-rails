@@ -13,8 +13,17 @@
     <%= link_to "ABOUT", about_path %>
     <%= link_to "CONTACT", contact_path %>
     <%= link_to "ALL POSTS", posts_path %>
+    <% if user_signed_in? %>
+      <%= link_to "LOG OUT", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "REGISTER", new_user_registration_path %>
+      <%= link_to "LOG IN", new_user_session_path %>
+    <% end %>
+
   </header>
   <main>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </main>
 </body>

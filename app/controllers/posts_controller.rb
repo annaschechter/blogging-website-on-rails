@@ -1,11 +1,15 @@
 class PostsController < ApplicationController
-
   def index
     @posts = Post.all
   end
 
   def new
-    @post = Post.new
+    authenticate_user!
+    if current_user.has_role? :admin
+      @post = Post.new
+    else
+      redirect_to '/posts'
+    end
   end
 
   def post_params
@@ -13,8 +17,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
-    redirect_to '/posts'
+    authenticate_user!
+    if current_user.has_role? :admin
+      Post.create(post_params)
+      redirect_to '/posts'
+    else
+      redirect_to '/posts'
+    end
   end
 
   def show
@@ -22,19 +31,34 @@ class PostsController < ApplicationController
   end 
 
   def edit
-    @post = Post.find(params[:id])
+    authenticate_user!
+    if current_user.has_role? :admin
+      @post = Post.find(params[:id])
+    else
+      redirect_to '/posts'
+    end
   end
 
   def update
-    @post = Post.find(params[:id])
-    @post.update(post_params)
-    redirect_to '/posts'
+    authenticate_user!
+    if current_user.has_role? :admin
+      @post = Post.find(params[:id])
+      @post.update(post_params)
+      redirect_to '/posts'
+    else
+      redirect_to '/posts'
+    end
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to '/posts'
+    authenticate_user!
+    if current_user.has_role? :admin
+      @post = Post.find(params[:id])
+      @post.destroy
+      redirect_to '/posts'
+    else
+      redirect_to '/posts'
+    end
   end
 
 end
