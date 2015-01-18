@@ -1,5 +1,6 @@
 <p><%= @post.created_at%></p>
 <p><%= @post.text %></p>
+<%= link_to "COMMENT", new_post_comment_path(@post) %>
  <% if user_signed_in? %>
   <% if current_user.has_role? :admin%>
     <%= link_to "EDIT", edit_post_path(@post)%>

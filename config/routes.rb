@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get "/" => "home#index", :as => "root"
   get '/about' => 'about#index'
   get '/contact' => 'contact#index'
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
 
 
   # Example of regular route:
