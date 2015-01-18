@@ -1,7 +1,19 @@
 require 'rails_helper'
+
 feature 'posts' do 
+
+  def sign_in(email, password)
+    visit '/users/sign_in'
+    fill_in 'Email', with: email
+    fill_in 'Password', with: password
+    click_button 'Log in'
+  end
+
   before do
     Post.create(text: "Welcome to my blog")
+    admin = User.create(email: "anna@test.com", password: "passwordanna")
+    admin.add_role :admin
+    sign_in("anna@test.com", "passwordanna")
   end
 
   scenario 'are displayed on "all posts" page' do
