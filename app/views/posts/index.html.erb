@@ -1,4 +1,6 @@
  <%= link_to "NEW POST", new_post_path %>
 <% @posts.each do |post| %>
+  <p><%=post.created_at%></p>
   <p><%=post.text%>
+  <%= link_to "READ MORE", post_path(post) %>
 <%end%>

@@ -16,5 +16,11 @@ feature 'posts' do
     click_button 'Post'
     expect(page).to have_content('This is my second post')
   end
+
+  scenario 'users can view individual posts' do
+    visit '/posts'
+    click_link 'READ MORE'
+    expect(page).to have_content('Welcome to my blog')
+  end
   
 end
