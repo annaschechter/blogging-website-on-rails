@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <header>
+    <h1>Blogging Website</h1>
+    <%= link_to "HOME", root_path %>
+    <%= link_to "ABOUT", about_path %>
+    <%= link_to "CONTACT", contact_path %>
+    <a href='#'>ALL POSTS</a>
+  </header>
+  <main>
+    <%= yield %>
+  </main>
 </body>
 </html>
