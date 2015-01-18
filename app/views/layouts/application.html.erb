@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BloggingWebsite</title>
+  <title>Blogging Website</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <header>
-    <h1>Blogging Website</h1>
-    <%= link_to "HOME", root_path %>
-    <%= link_to "ABOUT", about_path %>
-    <%= link_to "CONTACT", contact_path %>
-    <%= link_to "ALL POSTS", posts_path %>
-    <% if user_signed_in? %>
-      <%= link_to "LOG OUT", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "REGISTER", new_user_registration_path %>
-      <%= link_to "LOG IN", new_user_session_path %>
-    <% end %>
+    <section class="navigation-bar">
+      <%= link_to "Blogging Website", root_path, :class=>"navbar-brand"%>
+      <ul class="options">
+        <li><%= link_to "HOME", root_path %></li>
+        <li><%= link_to "ABOUT", about_path %></li>
+        <li><%= link_to "CONTACT", contact_path %></li>
+        <li><%= link_to "ALL POSTS", posts_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "REGISTER", new_user_registration_path %></li>
+          <li><%= link_to "LOG IN", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </section>
 
   </header>
   <main>
