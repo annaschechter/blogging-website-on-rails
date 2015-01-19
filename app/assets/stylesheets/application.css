@@ -15,7 +15,7 @@
  */
  header {
   height: 30vw;
-  background-image: url("https://unsplash.imgix.net/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?q=75&fm=jpg&s=aa91c69a9c86b9e739c9c4b87b5c341a");
+  background-image: url("london.png");
   background-size: 100vw 30vw;
   position: relative;
  }
@@ -30,7 +30,7 @@
 }
 
  a {
-    color: black;
+    color: #382f34;
     font-size: 1.6vw;
     font-weight:bold;
     display: inline-block;
@@ -56,12 +56,14 @@ ul {
     padding-left: 0px;
     padding-right: 0px;
 }
+
 main {
+/*    background-color: #f2efe9;*/
+}
+
+.left-column {
     width: 65vw;
-    padding-top: 1vw;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: #eeeeee;
+    border-right: solid 2px #e3e0d8;
 }
 
 
