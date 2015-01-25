@@ -15,7 +15,7 @@ before_filter :authenticate_user!, except: [:index, :show]
   end
 
   def post_params
-    params.require(:post).permit(:text)
+    params.require(:post).permit(:title, :text)
   end
 
   def create

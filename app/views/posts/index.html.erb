@@ -1,26 +1,32 @@
- <section class="left-column"><% if user_signed_in? %></section>
-  <% if current_user.has_role? :admin%>
-    <%= link_to "NEW POST", new_post_path %>
+<section class="left-column">
+  <% if user_signed_in? %>
+    <% if current_user.has_role? :admin%>
+      <%= link_to "NEW POST", new_post_path %>
+    <% end %>
   <% end %>
-<% end %>
-<% @posts.each do |post| %>
-  <article class="post">
-    <p class="time"><%= time_ago_in_words(post.created_at) %> ago</p>
-    <br/>
-    <p class="message"><%=post.text%>
-    <br/>
-    <%= link_to "READ MORE", post_path(post), :class=>"read-more"%>
-    <%= link_to "COMMENT", new_post_comment_path(post), :class=>"comment-link"%>
+  <% @posts.each do |post| %>
+    <article class="post">
+      <section class="post-details">
+        <p class="post-title"><%=post.title%></p>
+        <p class="time"><%= time_ago_in_words(post.created_at) %> ago</p>
+      </section>
+      <br/>
+      <p class="posts-post-message"><%=post.text%></p>
+      <br/>
+      <%= link_to "READ MORE", post_path(post), :class=>"read-more"%>
+      <%= link_to "COMMENT", new_post_comment_path(post), :class=>"comment-link"%>
     </article>
-    <article class="comment">
-      <% if post.comments.length != 0%>
-        <p class="comments-title">COMMENTS:</p>
-        <% post.comments.each do |comment| %>
-          <p class="time"><%= time_ago_in_words(comment.created_at) %> ago</p>
-           <p class="author">AUTHOR: <%=User.find(comment.user_id).email%></p>
-          <p><%=comment.text%></p>
-        <%end%>
-      <%end%>
-    </article>
-  
-<%end%>
+    
+    <% if post.comments.length != 0%>
+      <article class="comment">
+          <% post.comments.each do |comment| %>
+            <section class="comment-details">
+              <p class="time" id="comment-time"><%= time_ago_in_words(comment.created_at) %> ago</p>
+              <p class="author">by <%=User.find(comment.user_id).email%></p>
+            </section>
+            <p><%=comment.text%></p>
+          <%end%>
+      </article>
+    <%end%>
+  <%end%>
+</section>

@@ -57,13 +57,24 @@ ul {
     padding-right: 0px;
 }
 
-main {
-/*    background-color: #f2efe9;*/
-}
-
 .left-column {
     width: 65vw;
     border-right: solid 2px #e3e0d8;
 }
+
+#post-title {
+    display: inline-block;
+}
+
+#time {
+    display: inline-block;
+}
+
+
+
+
+
+
+
 
 

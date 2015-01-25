@@ -1,1 +1,25 @@
-<section class="left-column"><p>Some latest posts will go here</p></section>
+<section class="left-column">
+  <article class="post">
+    <section class="post-details">
+      <p class="post-title"><%=@post.title%></p>
+      <p class="time"><%= time_ago_in_words(@post.created_at) %> ago</p>
+    </section>
+    <br/>
+    <p class="home-post-message"><%=@post.text%></p>
+    <br/>
+    <%= link_to "READ MORE", post_path(@post), :class=>"read-more"%>
+    <%= link_to "COMMENT", new_post_comment_path(@post), :class=>"comment-link"%>
+  </article>
+  
+  <% if @post.comments.length != 0%>
+      <article class="comment">
+          <% @post.comments.each do |comment| %>
+            <section class="comment-details">
+              <p class="time" id="comment-time"><%= time_ago_in_words(comment.created_at) %> ago</p>
+              <p class="author">by <%=User.find(comment.user_id).email%></p>
+            </section>
+            <p><%=comment.text%></p>
+          <%end%>
+      </article>
+    <%end%>
+</section>

@@ -4,18 +4,51 @@
 
 .post {
   background-color: #d4d4d9;
-  margin: 2vw;
+  margin: 1.6vw;
   padding: 1vw;
 }
 .comment {
   background-color: #d4d4d9;
-  margin: 2vw;
+  margin: 1.6vw;
   margin-left: 5vw;
   padding: 1vw;
 }
 
 .time {
+  display: inline-block;
+  font-weight: bold;
   float: right;
+  padding-right: 1vw;
+}
+
+#comment-time {
+  margin: 0;
+}
+
+.author {
+  display: inline-block;
+  margin: 0;
+  padding-left: 1vw;
+  font-weight: bold;
+}
+
+.post-title {
+  display: inline-block;
+  font-weight: bold;
+  padding-left: 1vw;
+}
+
+.post-details {
+  background-color: white;
+}
+
+.comment-details {
+  background-color: white;
+}
+
+.posts-post-message {
+  height: 55px;
+  overflow: hidden;
 }
 
 .read-more {
