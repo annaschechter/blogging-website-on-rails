@@ -58,8 +58,14 @@ ul {
 }
 
 .left-column {
+    display: inline-table;
     width: 65vw;
     border-right: solid 2px #e3e0d8;
+}
+
+.right-column {
+    display: inline-table;
+    width: 33.2vw;
 }
 
 #post-title {
@@ -68,6 +74,10 @@ ul {
 
 #time {
     display: inline-block;
+}
+
+h2 {
+    margin-left: 1.5vw
 }
 
 

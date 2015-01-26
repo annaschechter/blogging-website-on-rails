@@ -7,6 +7,10 @@
   margin: 1.6vw;
   padding: 1vw;
 }
+p {
+  line-height: 150%;
+}
+
 .comment {
   background-color: #d4d4d9;
   margin: 1.6vw;
@@ -47,21 +51,23 @@
 }
 
 .posts-post-message {
-  height: 55px;
+  height: 70px;
   overflow: hidden;
 }
 
+.news-post-message {
+  height: 50px;
+  overflow: hidden;
+}
 .read-more {
-  display: initial;
   padding: 0vw;
   font-size: 1.3vw;
   color: #4e4f4e;
 }
 
 .comment-link {
-  display: initial;
-  padding: 0vw;
   font-size: 1.3vw;
-  float:right;
   color: #4e4f4e;
+  padding: 0;
+  float: right;
 }

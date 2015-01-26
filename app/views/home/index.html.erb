@@ -4,10 +4,8 @@
       <p class="post-title"><%=@post.title%></p>
       <p class="time"><%= time_ago_in_words(@post.created_at) %> ago</p>
     </section>
-    <br/>
     <p class="home-post-message"><%=@post.text%></p>
     <br/>
-    <%= link_to "READ MORE", post_path(@post), :class=>"read-more"%>
     <%= link_to "COMMENT", new_post_comment_path(@post), :class=>"comment-link"%>
   </article>
   
@@ -22,4 +20,18 @@
           <%end%>
       </article>
     <%end%>
+</section>
+<section class="right-column">
+  <h2 class="Latest-posts">LATEST POSTS:</h2>
+  <% @posts.each do |post| %>
+    <article class="post">
+      <section class="post-details">
+        <p class="post-title"><%=post.title%></p>
+<!--         <p class="time"><%= time_ago_in_words(post.created_at) %> ago</p> -->
+      </section>
+      <p class="news-post-message"><%=post.text%></p>
+      <%= link_to "READ MORE", post_path(post), :class=>"read-more"%>
+      <a class="comment-link"><%=post.comments.count%> COMMENTS</a>
+    </article>
+  <%end%>
 </section>
