@@ -14,7 +14,7 @@ before_filter :authenticate_user!
   def create
     @post = Post.find(params[:post_id])
     @post.comments.create(comment_params)
-    redirect_to '/posts'
+    redirect_to post_path(@post)
   end
 
 end

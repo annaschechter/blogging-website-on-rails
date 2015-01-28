@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :comments
+  
+  def user_params
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  end
 end
