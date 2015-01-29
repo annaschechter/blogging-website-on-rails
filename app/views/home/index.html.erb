@@ -1,9 +1,7 @@
 <section class="left-column">
   <article class="post">
-    <section class="post-details">
-      <p class="post-title"><%=@post.title%></p>
-      <p class="time"><%= time_ago_in_words(@post.created_at) %> ago</p>
-    </section>
+    <p class="post-title"><%=@post.title%></p>
+    <p class="time"><%= time_ago_in_words(@post.created_at) %> ago</p>
     <p class="home-post-message"><%=@post.text%></p>
     <br/>
     <%= link_to "COMMENT", new_post_comment_path(@post), :class=>"comment-link"%>
@@ -27,7 +25,7 @@
     <article class="post">
       <section class="post-details">
         <p class="post-title"><%=post.title%></p>
-<!--         <p class="time"><%= time_ago_in_words(post.created_at) %> ago</p> -->
+        <p class="time"><%= time_ago_in_words(post.created_at) %> ago</p>
       </section>
       <p class="news-post-message"><%=post.text%></p>
       <%= link_to "READ MORE", post_path(post), :class=>"read-more"%>

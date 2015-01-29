@@ -3,10 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .post {
-  background-color: #d4d4d9;
+  background-color: white;
   margin: 1.6vw;
   padding: 1vw;
 }
+
 p {
   line-height: 150%;
 }
@@ -19,13 +20,14 @@ p {
 }
 
 .time {
-  display: inline-block;
   font-weight: bold;
-  float: right;
   padding-right: 1vw;
+  color: #4e4f4e;
 }
 
 #comment-time {
+  display: inline-block;
+  float: right;
   margin: 0;
 }
 
@@ -37,13 +39,10 @@ p {
 }
 
 .post-title {
-  display: inline-block;
   font-weight: bold;
-  padding-left: 1vw;
-}
+  font-size: 2vw;
+  line-height: 90%;
 
-.post-details {
-  background-color: white;
 }
 
 .comment-details {

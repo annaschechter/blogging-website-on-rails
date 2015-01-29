@@ -19,7 +19,7 @@
           <% @post.comments.each do |comment| %>
             <section class="comment-details">
               <p class="time" id="comment-time"><%= time_ago_in_words(comment.created_at) %> ago</p>
-              <p class="author">by <%=User.find(comment.user_id).email%></p>
+              <p class="author">by <%=User.find(comment.user_id).username%></p>
             </section>
             <p><%=comment.text%></p>
           <%end%>
