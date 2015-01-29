@@ -1,23 +1,26 @@
 <section class="left-column">
   <article class="post">
-    <p class="post-title"><%=@post.title%></p>
-    <p class="time"><%= time_ago_in_words(@post.created_at) %> ago</p>
-    <p class="home-post-message"><%=@post.text%></p>
-    <br/>
-    <%= link_to "COMMENT", new_post_comment_path(@post), :class=>"comment-link"%>
-  </article>
-  
-  <% if @post.comments.length != 0%>
-      <article class="comment">
-          <% @post.comments.each do |comment| %>
-            <section class="comment-details">
-              <p class="time" id="comment-time"><%= time_ago_in_words(comment.created_at) %> ago</p>
-              <p class="author">by <%=User.find(comment.user_id).username%></p>
-            </section>
-            <p><%=comment.text%></p>
-          <%end%>
-      </article>
+    <% if @post %>
+      <p class="post-title"><%=@post.title%></p>
+      <p class="time"><%= time_ago_in_words(@post.created_at) %> ago</p>
+      <p class="home-post-message"><%=@post.text%></p>
+      <br/>
+      <%= link_to "COMMENT", new_post_comment_path(@post), :class=>"comment-link"%>
     <%end%>
+  </article>
+  <% if @post != nil %>
+    <% if @post.comments.length != 0%>
+        <article class="comment">
+            <% @post.comments.each do |comment| %>
+              <section class="comment-details">
+                <p class="time" id="comment-time"><%= time_ago_in_words(comment.created_at) %> ago</p>
+                <p class="author">by <%=User.find(comment.user_id).username%></p>
+              </section>
+              <p><%=comment.text%></p>
+            <%end%>
+        </article>
+    <%end%>
+  <%end%>
 </section>
 <section class="right-column">
   <h2 class="Latest-posts">LATEST POSTS:</h2>
