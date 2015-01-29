@@ -15,7 +15,7 @@
  */
  header {
   height: 30vw;
-  background-image: url("london.png");
+  background-image: url('http://i.guim.co.uk/static/w--/h--/q-95/sys-images/Guardian/Pix/pictures/2012/7/24/1343136870155/St-Pauls-at-night-014.jpg');
   background-size: 100vw 30vw;
   position: relative;
  }
