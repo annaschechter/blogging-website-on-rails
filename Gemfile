@@ -49,3 +49,4 @@ gem 'cancan'
 gem 'rolify'
 
 gem 'rails_12factor'
+gem 'puma'
