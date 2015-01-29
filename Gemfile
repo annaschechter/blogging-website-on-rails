@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+ruby '2.0.0'
+
 gem 'rails', '4.1.7'
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -45,3 +47,5 @@ end
 gem 'devise'
 gem 'cancan'
 gem 'rolify'
+
+gem 'rails_12factor'
