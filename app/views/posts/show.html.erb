@@ -9,7 +9,7 @@
     <% if user_signed_in? %>
       <% if current_user.has_role? :admin%>
         <%= link_to "EDIT", edit_post_path(@post)%>
-        <%= link_to "DELETE", post_path(@post), method: :delete%>
+        <%= link_to "DELETE", post_path(@post), method: :delete, :id=>"delete"%>
       <% end %>
     <% end %>
   </article>
@@ -25,6 +25,19 @@
           <%end%>
       </article>
     <%end%>
+</section>
+<section class="right-column">
+  <h2 class="Latest-posts">LATEST POSTS:</h2>
+  <% @posts.each do |post| %>
+    <article class="post">
+      <section class="post-details">
+        <p class="post-title"><%=post.title%></p>
+      </section>
+      <p class="news-post-message"><%=post.text%></p>
+      <%= link_to "READ MORE...", post_path(post), :class=>"read-more"%>
+      <a class="comment-link">COMMENTS(<%=post.comments.count%>)</a>
+    </article>
+  <%end%>
 </section>
 
 

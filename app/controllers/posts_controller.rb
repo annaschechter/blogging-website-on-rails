@@ -7,6 +7,7 @@ before_filter :authenticate_user!, except: [:index, :show]
   end
 
   def new
+    @posts = @posts = Post.order('created_at DESC').limit(5)
     if current_user.has_role? :admin
       @post = Post.new
     else
@@ -28,10 +29,12 @@ before_filter :authenticate_user!, except: [:index, :show]
   end
 
   def show
+    @posts = @posts = Post.order('created_at DESC').limit(5)
     @post = Post.find(params[:id])
   end 
 
   def edit
+    @posts = @posts = Post.order('created_at DESC').limit(5)
     if current_user.has_role? :admin
       @post = Post.find(params[:id])
     else

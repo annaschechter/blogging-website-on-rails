@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   get "/" => "home#index", :as => "root"
   get '/about' => 'about#index'
-  get '/contact' => 'contact#index'
   resources :posts do
     resources :comments
   end
+
+  get 'contact', to: 'messages#new', as: 'contact'
+  post 'contact', to: 'messages#create'
 
 
   # Example of regular route:

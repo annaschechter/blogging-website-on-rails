@@ -30,8 +30,8 @@
         <p class="post-title"><%=post.title%></p>
       </section>
       <p class="news-post-message"><%=post.text%></p>
-      <%= link_to "READ MORE", post_path(post), :class=>"read-more"%>
-      <a class="comment-link"><%=post.comments.count%> COMMENTS</a>
+      <%= link_to "READ MORE...", post_path(post), :class=>"read-more"%>
+      <a class="comment-link">COMMENTS(<%=post.comments.count%>)</a>
     </article>
   <%end%>
 </section>
