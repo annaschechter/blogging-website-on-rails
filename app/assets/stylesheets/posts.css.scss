@@ -6,6 +6,11 @@
   background-color: white;
   margin: 1.6vw;
   padding: 1vw;
+  border-bottom: solid 2px #d9def4;
+}
+
+.post-details{
+  background-color:  #eaedf9;
 }
 
 p {
@@ -15,19 +20,20 @@ p {
 .comment {
   background-color: white;
   margin: 1.6vw;
-  margin-left: 5vw;
+  margin-left: 6vw;
   padding: 1vw;
 }
 
 .time {
   font-weight: bold;
-  padding-right: 1vw;
-  color: #2a3569;
+  color: #8e9ddf;
+  padding-left: 1vw;
 }
 
 #comment-time {
   display: inline-block;
   float: right;
+  padding-right: 1vw;
   margin: 0;
 }
 
@@ -42,11 +48,13 @@ p {
   font-weight: bold;
   font-size: 2vw;
   line-height: 90%;
+  padding-top: 1vw;
+  padding-left: 1vw;
 
 }
 
 .comment-details {
-  background-color: white;
+  background-color: #d9def4;
 }
 
 .posts-post-message {
@@ -54,19 +62,53 @@ p {
   overflow: hidden;
 }
 
-.news-post-message {
-  height: 50px;
-  overflow: hidden;
-}
 .read-more {
   padding: 0vw;
   font-size: 1.3vw;
-  color: #2a3569;
+  color: #8e9ddf;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+  color: #8e9ddf;
 }
 
 .comment-link {
   font-size: 1.3vw;
-  color: #2a3569;
+  color: #8e9ddf;
   padding: 0;
+}
+
+.comment-link:hover {
+  text-decoration: underline;
+  color: #8e9ddf;
+}
+
+//--------------
+
+.latest-post {
+  margin-left: 2vw;
+  border-bottom: solid 2px #d9def4;
+}
+
+.latest-post-title {
+  font-size: 1.5vw;
+  font-weight: bold;
+  background-color: #eaedf9;
+  padding: 0.2vw;
+}
+
+.latest-post-message {
+  height: 50px;
+  overflow: hidden;
+}
+
+.comment-number {
   float: right;
+  color: #8e9ddf;
+  font-size: 1.3vw;
+}
+
+.comment-number:hover {
+  color: #8e9ddf;
 }
