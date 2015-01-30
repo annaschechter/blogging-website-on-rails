@@ -15,7 +15,7 @@
  */
  header {
   height: 30vw;
-  background-image: url('london.jpg');
+  background-image: image-url('london.jpg');
   background-size: 102vw 30vw;
   position: relative;
  }
