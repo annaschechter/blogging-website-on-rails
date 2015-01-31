@@ -128,6 +128,28 @@ h2 {
     padding-left: 2vw;
 }
 
+.notice {
+    color: red;
+}
+
+.alert {
+    color: red;
+    font-size: 1.3vw;
+    text-transform: uppercase;
+}
+
+#error_explanation h2 {
+    padding-left: 0;
+    color: red;
+    font-size: 1.2vw;
+}
+
+#error_explanation li {
+    padding-left: 0;
+    color: red;
+    font-size: 1.2vw;
+    display: list-item;
+}
 
 
 
