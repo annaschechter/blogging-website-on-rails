@@ -1,16 +1,23 @@
-<h2>Forgot your password?</h2>
+<section class="left-column">
+  <h2 class="page-title">FORGOT YOUR PASSWORD?</h2>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= devise_error_messages! %>
+    <p class="label">EMAIL*</p>
+    <%= f.email_field :email, :class=>"small-field" %><br/>
+    <%= f.submit "SEND ME RESET INSTRUCTIONS", :class=>"button" %>
+  <% end %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</section>
+</section>
+<section class="right-column">
+  <h2 class="latest-posts">LATEST POSTS:</h2>
+  <% Post.order('created_at DESC').limit(3).each do |post| %>
+    <article class="latest-post">
+      <p class="latest-post-title"><%=post.title%></p>
+      <p class="latest-post-message"><%=post.text%></p>
+      <%= link_to "READ MORE...", post_path(post), :class=>"read-more"%>
+      <a class="comment-number">COMMENTS(<%=post.comments.count%>)</a>
+    </article>
+  <%end%>
+</section>

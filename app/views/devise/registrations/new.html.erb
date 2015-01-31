@@ -1,41 +1,26 @@
 <section class="left-column">
-  <h2>Registration</h2>
+  <h2 class="page-title">REGISTRATION</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
-
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
-
-    <div class="field">
-      <%= f.label :username %><br />
-      <%= f.text_field :username %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %>
-      <% if @validatable %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Register" %>
-    </div>
+      <p class="label">EMAIL*</p>
+      <%= f.email_field :email, :class=>"small-field" %>
+      <p class="label">USERNAME*</p>
+      <%= f.text_field :username, :class=>"small-field"  %>
+      <p class="label">PASSWORD*
+        <% if @validatable %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+      </p>
+      <%= f.password_field :password, autocomplete: "off", :class=>"small-field"   %>
+      <p class="label">PASSWORD CONFIRMATION*</p>
+      <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"small-field"   %><br/>
+      <%= f.submit "REGISTER", :class=>"button"  %>
   <% end %>
-
   <%= render "devise/shared/links" %>
 </section>
 <section class="right-column">
   <h2 class="latest-posts">LATEST POSTS:</h2>
-  <% Post.all.each do |post| %>
+  <% Post.order('created_at DESC').limit(3).each do |post| %>
     <article class="latest-post">
       <p class="latest-post-title"><%=post.title%></p>
       <p class="latest-post-message"><%=post.text%></p>

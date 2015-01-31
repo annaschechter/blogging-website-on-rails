@@ -29,8 +29,7 @@
 
 .button {
   background-color: #eaedf9;
-  width: 7vw;
-  padding: 0.5vw;
+  padding: 0.6vw;
   margin-top: 0.7vw;
   font-size: 1.2vw;
 }
@@ -38,3 +37,17 @@
 .button:hover {
   background-color: white;
 }
+
+.devise-link {
+  color: #8e9ddf;
+  font-size: 1.3vw;
+  padding-left: 0;
+  padding-top: 3vw;
+  text-decoration: underline;
+}
+
+.devise-link:hover {
+  color: #8e9ddf;
+}
+
+
