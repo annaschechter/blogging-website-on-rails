@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
   end
 
   def create
+    @posts = @posts = Post.order('created_at DESC').limit(3)
     @message = Message.new(message_params)
     puts "Contrller"+ @message.name
     
@@ -13,7 +14,7 @@ class MessagesController < ApplicationController
       MessageMailer.new_message(@message).deliver
       redirect_to contact_path, notice: "Your messages has been sent."
     else
-      flash[:alert] = "An error occurred while delivering this message."
+      flash[:alert] = "An error occurred while delivering this message. Please make sure that you fill in all the required fields."
       render :new
     end
   end

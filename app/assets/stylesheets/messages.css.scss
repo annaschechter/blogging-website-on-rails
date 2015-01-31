@@ -1,3 +1,40 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.label {
+  font-size: 1.2vw;
+  line-height: 50%;
+}
+
+.small-field {
+  width: 40vw;
+  height: 2.5vw;
+  background-color: #eaedf9;
+}
+
+.small-field:focus {
+  background-color: white;
+}
+
+.large-field {
+  width: 40vw;
+  height: 20vw;
+  background-color: #eaedf9;
+}
+
+.large-field:focus {
+  background-color: white;
+}
+
+.button {
+  background-color: #eaedf9;
+  width: 7vw;
+  padding: 0.5vw;
+  margin-top: 0.7vw;
+  font-size: 1.2vw;
+}
+
+.button:hover {
+  background-color: white;
+}
