@@ -36,6 +36,7 @@
 ul {
     position: absolute;
     vertical-align: middle;
+    margin: 0;
 }
 
  li {
@@ -64,8 +65,7 @@ a:hover {
     font-size: 3vw;
     padding-right: 6.5vw;
     padding-left: 6.5vw;
-    padding-bottom: 2vw;
-    vertical-align: middle;
+    margin: 0;
 }
 
 .navbar-brand:hover {
@@ -74,7 +74,7 @@ a:hover {
 
 ul {
     display: inline-block;
-    position: relative;
+    padding-top: 0.9vw;
     padding-left: 0px;
     padding-right: 0px;
 }
