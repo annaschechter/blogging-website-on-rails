@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    @posts = @posts = Post.order('created_at DESC').limit(5)
   end
 
   def create

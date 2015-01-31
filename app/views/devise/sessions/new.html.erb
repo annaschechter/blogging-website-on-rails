@@ -1,26 +1,38 @@
-<h2>Log in</h2>
+<section class="left-column">
+  <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email_or_username %><br />
-    <%= f.text_field :login %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :email_or_username %><br />
+      <%= f.text_field :login %>
     </div>
-  <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end -%>
+
+    <div class="actions">
+      <%= f.submit "Log in" %>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</section>
+<section class="right-column">
+  <h2 class="latest-posts">LATEST POSTS:</h2>
+  <% Post.all.each do |post| %>
+    <article class="latest-post">
+      <p class="latest-post-title"><%=post.title%></p>
+      <p class="latest-post-message"><%=post.text%></p>
+      <%= link_to "READ MORE...", post_path(post), :class=>"read-more"%>
+      <a class="comment-number">COMMENTS(<%=post.comments.count%>)</a>
+    </article>
+  <%end%>
+</section>
