@@ -31,7 +31,7 @@
       <p class="latest-post-title"><%=post.title%></p>
       <p class="latest-post-message"><%=post.text%></p>
       <%= link_to "READ MORE...", post_path(post), :class=>"read-more"%>
-      <a class="comment-number">COMMENTS(<%=post.comments.count%>)</a>
+      <a class="comment-number">COMMENTS(<%=post.comments.count%>)</p>
     </article>
   <%end%>
 </section>

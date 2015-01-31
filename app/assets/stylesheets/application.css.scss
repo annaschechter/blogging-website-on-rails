@@ -14,14 +14,15 @@
  *= require_self
  */
  header {
-  height: 30vw;
-  background-image: asset-data-url("london.jpg");
-  background-size: 102vw 30vw;
-  position: relative;
+    height: 30vw;
+    background-image: asset-data-url("london.jpg");
+    background-size: 102vw 30vw;
+    position: relative;
  }
 
  body {
     margin: 0;
+
  }
 
  .navigation-bar {
@@ -58,6 +59,8 @@ a:hover {
 }
 
 .navbar-brand {
+    display: inline-block;
+    position: relative;
     font-size: 3vw;
     padding-right: 6.5vw;
     padding-left: 6.5vw;
@@ -71,19 +74,21 @@ a:hover {
 
 ul {
     display: inline-block;
+    position: relative;
     padding-left: 0px;
     padding-right: 0px;
 }
 
 .left-column {
-    display: inline-table;
+    float: left;
     width: 55vw;
     border-right: solid 2px #d9def4;
 }
 
 .right-column {
-    display: inline-table;
+    float: right;
     width: 28.5vw;
+    vertical-align:top;
 }
 
 #post-title {
@@ -95,22 +100,29 @@ ul {
 }
 
 main {
+    display: table;
     margin-left: 8vw;
     margin-right: 8vw;
-    border-bottom: solid 2px #d9def4;
     padding-top: 4vw;
+    border-bottom: solid 2px #d9def4;
+}
+
+footer {
+    display: table-row;
 }
 
 .copyright {
     float: right;
     margin-right: 6vw;
-    font-size: 1.2vw;
+    font-size: 1vw;
+    font-weight: normal;
+    color: black;
 }
 
 h2 {
     color: #8e9ddf;
     margin:0;
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     padding-left: 2vw;
 }
 
