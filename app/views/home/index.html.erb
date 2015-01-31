@@ -26,12 +26,14 @@
 </section>
 <section class="right-column">
   <h2 class="latest-posts">LATEST POSTS:</h2>
-  <% @posts.each do |post| %>
+  <% i = 1 %>
+  <% while i < @posts.count do %>
     <article class="latest-post">
-      <p class="latest-post-title"><%=post.title%></p>
-      <p class="latest-post-message"><%=post.text%></p>
-      <%= link_to "READ MORE...", post_path(post), :class=>"read-more"%>
-      <a class="comment-number">COMMENTS(<%=post.comments.count%>)</p>
+      <p class="latest-post-title"><%=@posts[i].title%></p>
+      <p class="latest-post-message"><%=@posts[i].text%></p>
+      <%= link_to "READ MORE...", post_path(@posts[i]), :class=>"read-more"%>
+      <a class="comment-number">COMMENTS(<%=@posts[i].comments.count%>)</a>
+      <% i += 1 %>
     </article>
   <%end%>
 </section>

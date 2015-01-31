@@ -82,7 +82,9 @@ ul {
 .left-column {
     float: left;
     width: 55vw;
+    min-height: 45vw;
     border-right: solid 2px #d9def4;
+    margin-bottom: 2vw;
 }
 
 .right-column {
@@ -109,14 +111,14 @@ main {
 
 footer {
     display: table-row;
+    height: 6vw;
 }
 
 .copyright {
-    float: right;
-    margin-right: 6vw;
+    padding-top: 1.2vw;
+    padding-left: 80vw;
     font-size: 1vw;
-    font-weight: normal;
-    color: black;
+    vertical-align: bottom;
 }
 
 h2 {
