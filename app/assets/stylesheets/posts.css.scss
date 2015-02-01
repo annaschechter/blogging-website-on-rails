@@ -58,7 +58,7 @@ p {
 }
 
 .posts-post-message {
-  height: 70px;
+  height: 7vw;
   overflow: hidden;
 }
 
@@ -99,7 +99,7 @@ p {
 }
 
 .latest-post-message {
-  height: 50px;
+  height: 4.8vw;
   overflow: hidden;
 }
 
@@ -121,4 +121,21 @@ p {
 
 .comment-number-full:hover {
   color: #8e9ddf;
+}
+
+//----------------------------
+
+.contact-me {
+  //background-color: #eaedf9;
+  margin-top: 2vw;
+  margin-left: 2vw;
+  padding-left: 0.55vw;
+  padding-right: 0.55vw;
+  border: solid 4px #eaedf9;
+  position:fixed;
+}
+
+.have-any-questions {
+  font-size: 1.3vw;
+  line-height: 160%;
 }
