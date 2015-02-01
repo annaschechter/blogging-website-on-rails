@@ -27,6 +27,16 @@
   background-color: white;
 }
 
+.large-field-comment {
+  width: 52vw;
+  height: 10vw;
+  background-color: #eaedf9;
+}
+
+.large-field-comment:focus {
+  background-color: white;
+}
+
 .button {
   background-color: #eaedf9;
   padding: 0.6vw;

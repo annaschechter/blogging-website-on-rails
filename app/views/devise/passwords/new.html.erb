@@ -1,7 +1,7 @@
 <section class="left-column">
   <h2 class="page-title">FORGOT YOUR PASSWORD?</h2>
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-    <%= devise_error_messages! %><br/>
+    <p><%= devise_error_messages! %></p><br/><br/>
     <p class="label">EMAIL OR USERNAME*</p>
     <%= f.email_field :login, :class=>"small-field" %><br/>
     <%= f.submit "SEND ME RESET INSTRUCTIONS", :class=>"button" %>

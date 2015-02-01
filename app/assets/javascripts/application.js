@@ -15,4 +15,12 @@
 //= require turbolinks
 //= require_tree .
 
+$(document).ready(function() {
+
+  $('.f').on("click", ".notice-box", function() {
+    $('.notice-box').fadeOut("fast");
+  });
+
+})
+
 

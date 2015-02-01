@@ -1,8 +1,8 @@
 <section class="left-column">
   <h2 class="page-title">RESEND CONFIRMATION INSTRUCTIONS</h2>
+  <p>Please note: it may take up to 1 hour to receive the confirmation instrustions</p>
   <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-    <%= devise_error_messages! %><br/>
-    <p>Please note: it may take up to 1 hour to receive the confirmation instrustions</p><br/>
+    <p><%= devise_error_messages! %></p><br/><br/>
 
     <p class="label">EMAIL*</p>
     <%= f.email_field :email, :class=>"small-field" %><br/>

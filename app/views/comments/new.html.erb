@@ -1,10 +1,4 @@
 <section class="left-column">
-    <%= form_for [@post, @comment] do |f| %>
-      YOUR COMMENT:<br/>
-      <%= f.text_area :text %><br/>
-      <%= f.hidden_field :user_id, :value => current_user.id %>
-      <%= f.submit 'SUBMIT' %>
-    <% end %>
   <article class="post">
     <section class="post-details">
       <p class="post-title"><%=@post.title%></p>
@@ -30,6 +24,12 @@
         <%end%>
     </article>
   <%end%>
+  <%= form_for [@post, @comment] do |f| %>
+    <p class="label">YOUR COMMENT*</p>
+    <%= f.text_area :text, :class=>"large-field-comment"%><br/>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.submit 'SUBMIT', :class=>"button"%>
+  <% end %>
 </section>
 <section class="right-column">
   <h2 class="latest-posts">LATEST POSTS:</h2>

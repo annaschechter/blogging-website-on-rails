@@ -2,7 +2,7 @@
   <h2 class="page-title">LOG IN</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %><br/>
+    <p><%= devise_error_messages! %></p><br/>
     <p class="label">EMAIL OR USERNAME*</p>
     <%= f.text_field :login,:class=>"small-field"%>
     <p class="label">PASSWORD*</p>

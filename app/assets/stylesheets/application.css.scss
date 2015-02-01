@@ -127,18 +127,40 @@ h2 {
     padding-left: 2vw;
 }
 
-.notice {
-    font-size: 1.3vw;
+//-------------------
+
+.notice-box {
+    foat: right;
+    font-size: 0.7vw;
     text-transform: uppercase;
+    width: 51.3vw;
+    background-color: #eaedf9;
+    padding: 1vw;
+    padding-bottom: .5vw;
+    margin-bottom: 2vw;
+}
+
+.notice {
+    padding: 0;
+    font-size: 1vw;
+}
+
+.close {
+    font-size: .8vw;
+    font-weight: bold;
+    background-color: #eaedf9;
+    float: right;
+    cursor:pointer;
+    border: none;
 }
 
 .alert {
     color: red;
-    font-size: 1.3vw;
-    text-transform: uppercase;
+    font-size: 1.2vw;
 }
 
 #error_explanation h2 {
+    margin-top: 0;
     padding-left: 0;
     color: red;
     font-size: 1.2vw;
@@ -151,22 +173,9 @@ h2 {
     display: list-item;
 }
 
-.close {
-    background:red;
-    font-weight:bold;
-    padding:5px;
-    cursor:pointer;
-    display:inline-block;
- }
-
-.myDiv {
-    padding:10px;
-    background:#ccc;
-    width: 200px;
-    margin:0 auto;
-    height:50px;
- }
-
+#error_explanation ul{
+    margin-bottom: 2vw;
+}
 
 
 

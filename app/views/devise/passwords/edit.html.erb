@@ -1,7 +1,7 @@
 <section class="left-column">
   <h2 class="page-title">CHANGE YOUR PASSWORD</h2>
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-    <%= devise_error_messages! %><br/>
+    <p><%= devise_error_messages! %></p><br/><br/>
     <%= f.hidden_field :reset_password_token %>
 
     <p class="label">NEW PASSWORD*</p>
