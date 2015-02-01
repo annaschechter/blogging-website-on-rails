@@ -114,7 +114,7 @@ p {
 }
 
 .comment-number-full {
-  padding-left: 32.5vw;
+  padding-left: 31vw;
   color: #8e9ddf;
   font-size: 1.3vw;
 }
@@ -137,4 +137,10 @@ p {
 .have-any-questions {
   font-size: 1.3vw;
   line-height: 160%;
+}
+
+//----------------------
+
+#edit, #delete {
+  padding-left: 3vw;
 }

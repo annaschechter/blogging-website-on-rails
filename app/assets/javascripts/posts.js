@@ -3,7 +3,7 @@
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on('page:load', function() {
-  $('#delete').click(function() {
+  $('#delete').click(function(event) {
       if (!confirm("Are you sure you want to delete this post?")) return false;
   });
 

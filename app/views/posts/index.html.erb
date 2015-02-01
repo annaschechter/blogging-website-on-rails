@@ -1,7 +1,7 @@
 <section class="left-column">
   <% if user_signed_in? %>
     <% if current_user.has_role? :admin%>
-      <%= link_to "NEW POST", new_post_path %>
+      <%= link_to "NEW POST", new_post_path, :class=>"comment-link" %>
     <% end %>
   <% end %>
   <% @posts.each do |post| %>
