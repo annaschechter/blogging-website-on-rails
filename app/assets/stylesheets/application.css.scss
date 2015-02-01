@@ -22,7 +22,6 @@
 
  body {
     margin: 0;
-
  }
 
  .navigation-bar {
@@ -129,7 +128,8 @@ h2 {
 }
 
 .notice {
-    color: red;
+    font-size: 1.3vw;
+    text-transform: uppercase;
 }
 
 .alert {
@@ -150,6 +150,22 @@ h2 {
     font-size: 1.2vw;
     display: list-item;
 }
+
+.close {
+    background:red;
+    font-weight:bold;
+    padding:5px;
+    cursor:pointer;
+    display:inline-block;
+ }
+
+.myDiv {
+    padding:10px;
+    background:#ccc;
+    width: 200px;
+    margin:0 auto;
+    height:50px;
+ }
 
 
 

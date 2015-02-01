@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   rolify
   attr_accessor :login
+  validates :username, presence: true
+  validates :username, uniqueness: true, if: -> { self.username.present? }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

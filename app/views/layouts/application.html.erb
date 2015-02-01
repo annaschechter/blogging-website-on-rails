@@ -25,8 +25,18 @@
     </section>
   </header>
   <main>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if flash.present? -%>
+      <% flash.each do |key, value| %>
+        <% if key == "alert" %>
+          <p class="alert"><%=value%></p>
+        <% elsif key == "notice" %>
+          <div id='flash'>
+            <button class="close">X</button>
+            <%= content_tag(:div, value, :class => "flash #{key}") %>
+          </div>
+        <% end %>
+      <% end %> 
+    <% end -%> 
     <%= yield %>
   </main>
   <footer>

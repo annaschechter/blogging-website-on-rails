@@ -6,4 +6,5 @@ $(document).on('page:load', function() {
   $('#delete').click(function() {
       if (!confirm("Are you sure you want to delete this post?")) return false;
   });
+
 })
