@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blogging Website</title>
+  <title>Schecter Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,7 +9,7 @@
 <body>
   <header>
     <section class="navigation-bar">
-      <%= link_to "Blogging Website", root_path, :class=>"navbar-brand"%>
+      <%= link_to "Schechter Blog", root_path, :class=>"navbar-brand"%>
       <ul class="options">
         <li><%= link_to "HOME", root_path %></li>
         <li><%= link_to "ABOUT", about_path %></li>
@@ -42,7 +42,7 @@
     <%= yield %>
   </main>
   <footer>
-    <p class="copyright">Copyright BloggingWebsite</p>
+    <p class="copyright">Copyright SchechterBlog</p>
   </footer>
 </body>
 </html>
