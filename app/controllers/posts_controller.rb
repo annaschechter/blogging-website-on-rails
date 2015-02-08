@@ -21,8 +21,12 @@ before_filter :authenticate_user!, except: [:index, :show]
 
   def create
     if current_user.has_role? :admin
-      Post.create(post_params)
-      MessageMailer.new_notification().deliver
+      @post = Post.create(post_params)
+      @users = User.where(subscribe: true)
+      @users.each { |user|
+        puts user.username
+        MessageMailer.new_notification(user, @post).deliver
+      }
       redirect_to '/posts'
     else
       redirect_to '/posts'

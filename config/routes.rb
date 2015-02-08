@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'contact', to: 'messages#new', as: 'contact'
   post 'contact', to: 'messages#create'
 
+  resources :subscribe
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
