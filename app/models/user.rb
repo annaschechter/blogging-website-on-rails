@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :comments
   
   def user_params
-    params.require(:user).permit(:login, :username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:login, :username, :email, :password, :password_confirmation, :subscribe)
   end
 
   def self.find_first_by_auth_conditions(warden_conditions)

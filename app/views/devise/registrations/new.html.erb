@@ -14,6 +14,8 @@
       <%= f.password_field :password, autocomplete: "off", :class=>"small-field"   %>
       <p class="label">PASSWORD CONFIRMATION*</p>
       <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"small-field"   %><br/>
+      <p class="label">Subscribe to receive emails about new posts and relevant comments</p>
+      <%= f.check_box :subscribe %><br />
       <%= f.submit "REGISTER", :class=>"button"  %>
   <% end %>
   <%= render "devise/shared/links" %>
