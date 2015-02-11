@@ -4,7 +4,7 @@
       <p class="post-title"><%=@post.title%></p>
       <p class="time"><%= time_ago_in_words(@post.created_at) %> ago</p>
     </section>
-    <p class="home-post-message"><%=@post.text%></p>
+    <p class="home-post-message"><%=raw @post.text%></p>
     <% if user_signed_in? %>
       <% if current_user.has_role? :admin%>
         <%= link_to "EDIT", edit_post_path(@post)%>
@@ -36,7 +36,7 @@
   <% @posts.each do |post| %>
     <article class="latest-post">
       <p class="latest-post-title"><%=post.title%></p>
-      <p class="latest-post-message"><%=post.text%></p>
+      <p class="latest-post-message"><%=raw post.text%></p>
       <%= link_to "READ MORE...", post_path(post), :class=>"read-more"%>
       <a class="comment-number">COMMENTS(<%=post.comments.count%>)</a>
     </article>

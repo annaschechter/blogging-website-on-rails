@@ -8,7 +8,7 @@
   <% Post.order('created_at DESC').limit(3).each do |post| %>
     <article class="latest-post">
       <p class="latest-post-title"><%=post.title%></p>
-      <p class="latest-post-message"><%=post.text%></p>
+      <p class="latest-post-message"><%=raw post.text%></p>
       <%= link_to "READ MORE...", post_path(post), :class=>"read-more"%>
       <a class="comment-number">COMMENTS(<%=post.comments.count%>)</a>
     </article>

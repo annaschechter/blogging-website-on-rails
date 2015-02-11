@@ -5,7 +5,7 @@
         <p class="post-title"><%=@post.title%></p>
         <p class="time"><%= time_ago_in_words(@post.created_at) %> ago</p>
       </section>
-      <p class="home-post-message"><%=@post.text%></p>
+      <p class="home-post-message"><%=raw @post.text%></p>
       <br/>
       <%= link_to "COMMENT", new_post_comment_path(@post), :class=>"comment-link"%>
     <%end%>
@@ -30,7 +30,7 @@
   <% while i < @posts.count do %>
     <article class="latest-post">
       <p class="latest-post-title"><%=@posts[i].title%></p>
-      <p class="latest-post-message"><%=@posts[i].text%></p>
+      <p class="latest-post-message"><%=raw @posts[i].text%></p>
       <%= link_to "READ MORE...", post_path(@posts[i]), :class=>"read-more"%>
       <a class="comment-number">COMMENTS(<%=@posts[i].comments.count%>)</a>
       <% i += 1 %>
